@@ -24,7 +24,7 @@
        src: 'https://wordpress.org/latest.zip'
        dest: '/var/www'
        remote_src: true
-    becoume: yes
+    become: yes
    - name: 'Set mysql user password'
        mysql_user:
          name: 'root'
@@ -35,7 +35,7 @@
          state: 'present'
          login_user: 'root'
          login_password: 'DAMAitd1024'
-         
+
 
    
 
