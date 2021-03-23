@@ -29,12 +29,14 @@
      mysql_user:
        name: "{{ root }}"
        password: "{{ DAMAitd1024 }}"
+     become: yes  
    - name: 'Create wordpress DB'
      mysql_db:
        name: "{{ wordpress }}"      
        state: "{{ present }}"
        login_user: "{{ root }}"
        login_password: "{{ DAMAitd1024 }}"
+     become: yes 
 
 
    
