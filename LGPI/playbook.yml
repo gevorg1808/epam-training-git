@@ -26,15 +26,15 @@
        remote_src: true
      become: yes
    - name: 'Set mysql user password'
-       mysql_user:
-         name: 'root'
-         password: 'DAMAitd1024'
+     mysql_user:
+       name: 'root'
+       password: 'DAMAitd1024'
    - name: 'Create wordpress DB'
-       mysql_db:
-         name: 'wordpress'      
-         state: 'present'
-         login_user: 'root'
-         login_password: 'DAMAitd1024'
+     mysql_db:
+       name: 'wordpress'      
+       state: 'present'
+       login_user: 'root'
+       login_password: 'DAMAitd1024'
 
 
    
