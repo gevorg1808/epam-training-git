@@ -19,6 +19,11 @@
        state: 'present'
        update_cache: true
      become: yes
+   - name: 'Install Python Modules'
+     pip:
+       name: 'PyMySQL'
+       state: 'present'
+     become: yes
    - name: 'Install nginx'
      apt:
        name: 
@@ -27,12 +32,6 @@
         - 'zip'
        state: 'present'
        update_cache: true
-     become: yes
-   - name: 'Download and Install Wordpress'
-     unarchive:
-       src: 'https://wordpress.org/latest.zip'
-       dest: '/var/www'
-       remote_src: true
      become: yes
    - name: 'Set mysql root password'
      mysql_user:
