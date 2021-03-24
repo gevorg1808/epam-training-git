@@ -41,9 +41,16 @@
        login_user: 'root'
        login_password: ''
      become: yes  
-   - name: 'Create wordpress DB'
+   - name: 'create glpi user'
+     mysql_user:
+       name: 'root'
+       password: 'DAMAitd1024'
+       login_user: 'root'
+       login_password: 'DAMAitd1024'
+     become: yes  
+   - name: 'Create GLPI DB'
      mysql_db:
-       name: 'wordpress'      
+       name: 'glpi'      
        state: 'present'
        login_user: 'root'
        login_password: 'DAMAitd1024'
