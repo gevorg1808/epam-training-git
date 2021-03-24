@@ -16,8 +16,6 @@
         - 'nginx'
         - 'mysql-server'
         - 'zip'
-        - 'python-pymysql'
-        - 'python3-pymysql'
         - 'python-apt'
         - 'python3-apt'
        state: 'present'
