@@ -27,16 +27,18 @@
      become: yes
    - name: 'Set mysql user password'
      mysql_user:
-       name: "{{ root }}"
-       password: "{{ DAMAitd1024 }}"
+       name: 'root'
+       password: 'DAMAitd1024'
+       login_user: 'root'
+       login_password: ''
      become: yes  
    - name: 'Create wordpress DB'
      mysql_db:
-       name: "{{ wordpress }}"      
-       state: "{{ present }}"
-       login_user: "{{ root }}"
-       login_password: "{{ DAMAitd1024 }}"
-     become: yes 
+       name: 'wordpress'      
+       state: 'present'
+       login_user: 'root'
+       login_password: 'DAMAitd1024'
+     become: yes
 
 
    
