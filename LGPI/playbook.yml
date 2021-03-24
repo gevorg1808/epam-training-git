@@ -10,17 +10,16 @@
        - 'php-fpm'
       state: 'present'
      become: yes 
-   
-    - name: 'Install nginx'
+   - name: 'Install nginx'
      apt:
        name: 
         - 'nginx'
         - 'mysql-server'
         - 'zip'
-        - python-pymysql
-        - python3-pymysql
-        - python-apt
-        - python3-apt
+        - 'python-pymysql'
+        - 'python3-pymysql'
+        - 'python-apt'
+        - 'python3-apt'
        state: 'present'
        update_cache: true
      become: yes
