@@ -39,6 +39,7 @@
        name: 'root'
        password: 'DAMAitd1024'
        login_unix_socket: '/var/run/mysqld/mysqld.sock'
+       check_implict_admin: true
        update_password: 'on_create'
        login_user: 'root'
        login_password: ''
