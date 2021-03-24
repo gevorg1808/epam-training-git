@@ -39,15 +39,6 @@
        name: 'root'
        password: 'DAMAitd1024'
        login_unix_socket: '/var/run/mysqld/mysqld.sock'
-       check_implict_admin: true
-       update_password: 'on_create'
-       login_user: 'root'
-       login_password: ''
-     become: yes  
-   - name: 'create glpi user'
-     mysql_user:
-       name: 'glpi'
-       password: 'Niko70'
        update_password: 'on_create'
        login_user: 'root'
        login_password: 'DAMAitd1024'
@@ -60,6 +51,16 @@
        login_password: 'DAMAitd1024'
      become: yes
 
+   - name: 'create glpi user'
+     mysql_user:
+       name: 'glpi'
+       password: 'Niko70'
+       priv: 'glpi.ALL'
+       update_password: 'on_create'
+       login_user: 'root'
+       login_password: 'DAMAitd1024'
+     become: yes  
+   
 
    
 
