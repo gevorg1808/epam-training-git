@@ -46,6 +46,7 @@
      mysql_user:
        name: 'glpi'
        password: 'Niko70'
+       update_password: 'on_create'
        login_user: 'root'
        login_password: 'DAMAitd1024'
      become: yes  
