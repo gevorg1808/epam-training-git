@@ -43,8 +43,8 @@
      become: yes  
    - name: 'create glpi user'
      mysql_user:
-       name: 'root'
-       password: 'DAMAitd1024'
+       name: 'glpi'
+       password: 'Niko70'
        login_user: 'root'
        login_password: 'DAMAitd1024'
      become: yes  
