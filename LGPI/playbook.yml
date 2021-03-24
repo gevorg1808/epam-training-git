@@ -10,14 +10,21 @@
        - 'php-fpm'
       state: 'present'
      become: yes
+   - name: 'Install Python'
+     apt:
+       name:
+        - 'python-apt'
+        - 'python3-apt'
+        - 'python3-mysqldb'
+       state: 'present'
+       update_cache: true
+     become: yes
    - name: 'Install nginx'
      apt:
        name: 
         - 'nginx'
         - 'mysql-server'
         - 'zip'
-        - 'python-apt'
-        - 'python3-apt'
        state: 'present'
        update_cache: true
      become: yes
@@ -27,7 +34,7 @@
        dest: '/var/www'
        remote_src: true
      become: yes
-   - name: 'Set mysql user password'
+   - name: 'Set mysql root password'
      mysql_user:
        name: 'root'
        password: 'DAMAitd1024'
