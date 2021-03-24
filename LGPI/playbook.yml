@@ -9,7 +9,7 @@
        - 'php'
        - 'php-fpm'
       state: 'present'
-     become: yes 
+     become: yes
    - name: 'Install nginx'
      apt:
        name: 
