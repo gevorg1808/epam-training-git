@@ -13,7 +13,6 @@
        - 'php-imagick'
        - 'php-intl'
        - 'php-apcu'
-       - 'php-recode'
        - 'php-memcache'
        - 'php-imap'
        - 'php-mysql'
@@ -23,7 +22,6 @@
        - 'php-pear'
        - 'php-xmlrpc'
        - 'php-pspell'
-       - 'php-gettext'
        - 'php-mbstring'
        - 'php-json'
        - 'php-iconv'
@@ -38,7 +36,6 @@
         - 'python-apt'
         - 'python3-apt'
         - 'python3-mysqldb'
-        - 'pip'
        state: 'present'
        update_cache: true
      become: yes
@@ -46,6 +43,7 @@
      apt:
        name: 
         - 'apache2'
+        - 'libapache2-mod-php'
         - 'mysql-server'
         - 'zip'
        state: 'present'
@@ -78,6 +76,12 @@
        priv: 'glpi.*:ALL'
        state: 'present'
      become: yes  
+   - name: 'Install GLPI'
+       unarchive:
+         src: 'https://github.com/glpi-project/glpi/releases/download/9.5.4/glpi-9.5.4.tgz'
+         dest: '/var/www/'
+         remote_src: true
+     become: yes
    
 
    
