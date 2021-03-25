@@ -8,6 +8,28 @@
       name: 
        - 'php'
        - 'php-fpm'
+       - 'php-curl'
+       - 'php-gd'
+       - 'php-imagick'
+       - 'php-intl'
+       - 'php-apcu'
+       - 'php-recode'
+       - 'php-memcache'
+       - 'php-imap'
+       - 'php-mysql'
+       - 'php-cas'
+       - 'php-ldap'
+       - 'php-tidy'
+       - 'php-pear'
+       - 'php-xmlrpc'
+       - 'php-pspell'
+       - 'php-gettext'
+       - 'php-mbstring'
+       - 'php-json'
+       - 'php-iconv'
+       - 'php-xml'
+       - 'php-gd'
+       - 'php-xsl'
       state: 'present'
      become: yes
    - name: 'Install Python'
@@ -20,15 +42,10 @@
        state: 'present'
        update_cache: true
      become: yes
-   - name: 'Install Python Modules'
-     pip:
-       name: 'PyMySQL'
-       state: 'present'
-     become: yes
-   - name: 'Install nginx'
+   - name: 'Install apache2'
      apt:
        name: 
-        - 'nginx'
+        - 'apache2'
         - 'mysql-server'
         - 'zip'
        state: 'present'
@@ -58,7 +75,7 @@
        update_password: 'on_create'
        login_user: 'root'
        login_password: 'DAMAitd1024'
-       priv: '*.*.ALL'
+       priv: 'glpi.*:ALL'
        state: 'present'
      become: yes  
    
