@@ -82,6 +82,10 @@
        dest: '/var/www/'
        remote_src: true
      become: yes
+   - name: 'Remove standart apache2 config'
+     file:
+       state: absent
+       path: '/etc/apache2/sites-aviable/000-default.conf'
    
 
    
