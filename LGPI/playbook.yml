@@ -77,10 +77,10 @@
        state: 'present'
      become: yes  
    - name: 'Install GLPI'
-       unarchive:
-         src: 'https://github.com/glpi-project/glpi/releases/download/9.5.4/glpi-9.5.4.tgz'
-         dest: '/var/www/'
-         remote_src: true
+     unarchive:
+       src: 'https://github.com/glpi-project/glpi/releases/download/9.5.4/glpi-9.5.4.tgz'
+       dest: '/var/www/'
+       remote_src: true
      become: yes
    
 
