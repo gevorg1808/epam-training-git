@@ -85,7 +85,7 @@
    - name: 'Remove standart apache2 config'
      file:
        state: absent
-       path: '/etc/apache2/sites-available/000-default.conf'
+       path: '/etc/apache2/sites-enabled/000-default.conf'
      become: yes
    - name: 'enabled mod_rewrite for apache2'
      apache2_module: 
@@ -96,6 +96,9 @@
      copy:
        src: 'glpi.conf'
        dest: '/etc/apache2/sites-available/glpi.conf'
+     become: yes
+   - name: 'a2ensite glpi.conf'
+     command: 'a2ensite glpi.conf'
      become: yes
      notify:
        - 'Restart apache2'
