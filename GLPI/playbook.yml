@@ -97,7 +97,19 @@
        src: 'glpi.conf'
        dest: '/etc/apache2/sites-available/glpi.conf'
      become: yes
-   
+     notify:
+       - 'Restart apache2'
+  handlers:
+    - name: 'Restart apache2'
+      service:
+        name: 'apache2'
+        state: 'restarted'
+      become: yes
+    - name: 'apt update'
+      apt:
+        update_cache: true
+      become: true
+
    
 
    
