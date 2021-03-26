@@ -91,6 +91,7 @@
      apache2_module: 
        name: 'rewrite'
        state: 'present'
+     become: yes
    - name: 'Store apache Conf to server'
      copy:
        src: 'glpi.conf'
