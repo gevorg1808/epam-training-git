@@ -85,7 +85,7 @@
    - name: 'Remove standart apache2 config'
      file:
        state: absent
-       path: '/etc/apache2/sites-aviable/000-default.conf'
+       path: '/etc/apache2/sites-available/000-default.conf'
      become: yes
    - name: 'enabled mod_rewrite for apache2'
      apache2_module: 
@@ -95,7 +95,7 @@
    - name: 'Store apache Conf to server'
      copy:
        src: 'glpi.conf'
-       dest: '/etc/apache2/sites-aviable/glpi.conf'
+       dest: '/etc/apache2/sites-available/glpi.conf'
      become: yes
    
    
