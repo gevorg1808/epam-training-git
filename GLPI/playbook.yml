@@ -103,7 +103,10 @@
      notify:
        - 'Restart apache2'
    - name: 'Change kubeconfig file permission'
-     command: 'chown -R www-data:www-data /var/www/html/glpi'
+     command: 'chown -R www-data:www-data /var/www/glpi'
+     become: yes
+   - name: 'Change kubeconfig file permission'
+     command: 'chmod -R 775 /var/www/glpi'
      become: yes
   handlers:
     - name: 'Restart apache2'
