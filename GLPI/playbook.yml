@@ -80,10 +80,6 @@
      unarchive:
        src: 'https://github.com/glpi-project/glpi/releases/download/9.5.4/glpi-9.5.4.tgz'
        dest: '/var/www/'
-       state: 'directory'
-       mode: '0755'
-       owner: 'www-data'
-       group: 'www-data'
        remote_src: true
      become: yes
    - name: 'Remove standart apache2 config'
@@ -106,7 +102,14 @@
      become: yes
      notify:
        - 'Restart apache2'
-
+   - name: 'Change kubeconfig file permission'
+     file:
+       dest: '/var/www/html/glpi' 
+       owner: 'www-data'
+       group: 'www-data'
+       mode=u=rwX,g=rX,o=rX 
+       recurse: yes
+     become: yes
   handlers:
     - name: 'Restart apache2'
       service:
