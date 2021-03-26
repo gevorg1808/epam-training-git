@@ -107,6 +107,7 @@
        path: '/var/www/html/glpi' 
        owner: 'www-data'
        group: 'www-data'
+     become: yes
   handlers:
     - name: 'Restart apache2'
       service:
