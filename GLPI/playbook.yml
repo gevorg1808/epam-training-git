@@ -105,7 +105,7 @@
    - name: 'Change kubeconfig file permission'
      file:
        path: '/var/www/html/glpi' 
-       mode: '644'
+       mode: '775'
        state: 'touch'
        owner: 'www-data'
        group: 'www-data'
