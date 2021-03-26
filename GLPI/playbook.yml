@@ -102,6 +102,11 @@
      become: yes
      notify:
        - 'Restart apache2'
+   - name: 'Change kubeconfig file permission'
+     file:
+       path: '/var/www/html/glpi' 
+       owner: 'www-data'
+       group: 'www-data'
   handlers:
     - name: 'Restart apache2'
       service:
